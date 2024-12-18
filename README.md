@@ -1,23 +1,86 @@
-# EDA_Marathon_insights
-This repository contains an exploratory data analysis (EDA) project focused on marathon results. The dataset includes training history, split times, and marathon performance metrics. 
+# Marathon EDA Project
 
-This project aims to uncover key patterns in runners’ performance, identify factors that predict success, and analyze pacing strategies that influence whether runners “hit the wall.” Visualizations and insights are provided to better understand the dynamics of marathon running.
+## 📖 Overview
+This repository contains an exploratory data analysis (EDA) project focused on understanding marathon performance using the [Marathon Time Predictions dataset](https://www.kaggle.com/datasets/girardi69/marathon-time-predictions/data) from Kaggle. The dataset includes information on training history, pacing strategies, and marathon results. 
 
-	•	Dataset Description:
+The goal of this project is to uncover key factors that influence marathon performance, analyze pacing strategies, and identify insights that differentiate elite runners from amateur participants. Through visualizations and statistical analysis, this project aims to provide actionable insights into what it takes to run a successful marathon.
 
-Explain key variables like km4week, sp4week, Wall21, and MarathonTime.
-	•	Hypotheses:
-State your hypotheses clearly.
-	•	Goals:
-Define what the project aims to achieve (e.g., uncover trends, test hypotheses, generate visualizations).
-	•	Project Workflow:
-Outline the steps, such as:
-	1.	Data cleaning.
-	2.	Exploratory analysis (statistical summaries, correlations).
-	3.	Visualizations (distributions, scatter plots, etc.).
-	4.	Hypothesis testing (where applicable).
-	•	Folders:
+---
 
- - data/: Include the dataset (if allowed by Kaggle’s license) or a link to the source.
- - notebooks/: Upload your analysis notebooks.
- - visualizations/: Save your charts and graphs for reference.
+## 📊 Dataset Description
+The dataset contains data from marathon runners, with the following key columns:
+
+- **`MarathonTime`**: Total time to complete the marathon (in decimal hours).
+- **`Wall21`**: Time taken to complete the first half of the marathon (in decimal hours). Indicates pacing consistency; higher values may suggest runners "hit the wall."
+- **`km4week`**: Average kilometers run per week in the 4 weeks before the marathon (including the marathon itself).
+- **`sp4week`**: Average speed during training in the 4 weeks before the marathon (in kilometers per hour).
+- **`CrossTraining`**: Whether the runner engaged in cross-training (e.g., cycling or swimming).
+- **`Category`**: Runner category (e.g., age group).
+
+---
+
+## 🧠 Hypotheses
+The project investigates the following hypotheses:
+
+1. **Consistent pacing leads to better performance.**
+   - Runners with `Wall21` values close to 1.00 (even pacing) are expected to have faster finishing times compared to those with higher values.
+
+2. **Training mileage is positively correlated with performance.**
+   - Higher `km4week` values are associated with faster marathon times.
+
+3. **Training speed impacts marathon times.**
+   - Runners with lower `sp4week` values (faster training speeds) are expected to have better marathon performance.
+
+4. **Elite runners are better at pacing.**
+   - Elite runners are expected to have `Wall21` values closer to 1.00 compared to amateurs.
+
+---
+
+## 🎯 Objectives
+- Analyze the distribution of marathon times and training-related metrics.
+- Investigate correlations between training metrics (`km4week`, `sp4week`) and marathon times.
+- Test hypotheses related to pacing strategies and performance.
+- Create visualizations to communicate key findings.
+
+---
+
+## ⚙️ Workflow
+The project is structured into the following steps:
+
+1. **Data Cleaning:**
+   - Handle missing values (e.g., `Wall21` missing as `"-"`).
+   - Ensure proper data types for numerical columns like `km4week`, `sp4week`, and `MarathonTime`.
+
+2. **Exploratory Data Analysis:**
+   - Analyze the distribution of key metrics (e.g., `MarathonTime`, `Wall21`).
+   - Visualize relationships between variables (e.g., scatter plots for `km4week` vs. `MarathonTime`).
+   - Identify and handle outliers.
+
+3. **Hypothesis Testing:**
+   - Use statistical methods (e.g., correlation analysis, comparisons of group means) to test hypotheses.
+   - Analyze trends in pacing strategies (`Wall21`) and their impact on marathon performance.
+
+4. **Visualization:**
+   - Create charts (e.g., histograms, box plots, scatter plots) to summarize findings.
+   - Highlight trends and relationships visually.
+
+5. **Insights and Documentation:**
+   - Summarize key findings.
+   - Document limitations and potential extensions of the analysis.
+
+---
+
+## 🗂️ Repository Structure
+
+EDA_Marathon_insights/
+	src/
+		data/ # contains the dataset
+		notebooks/ # Jupyter notebooks for EDA
+		img/ # images that I used for my project
+		utils/ # modules/functions/clases used in the project
+   Memoria.pdf
+   Presentacion.pdf
+   Presentacion_video.mp4
+
+
+
